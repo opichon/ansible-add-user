@@ -1,5 +1,5 @@
 ---
-- name: ensure app/deploy user is present
+- name: Ensure user is present
   become: yes
   user:
     name: "{{ user }}"
@@ -7,11 +7,11 @@
     groups: "docker"
     uid: 1001
 
-- name: ensure you'll be able to deploy later on
+- name: Ensure you'll be able to deploy later on
   become: true
   authorized_key:
     user: "{{ user }}"
-    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    key: "{{ lookup('file', public_key }}"
     state: present
     manage_dir: yes
 
