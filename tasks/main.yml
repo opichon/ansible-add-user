@@ -14,4 +14,3 @@
     key: "{{ lookup('file', public_key) }}"
     state: present
     manage_dir: yes
-

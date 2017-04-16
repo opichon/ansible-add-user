@@ -1,2 +1,3 @@
 user: "{{ ansible_ssh_user }}"
-public_key: '~/.ssh/id_rsa.pub'
+groups: "www-data"
+public_key: "~/.ssh/id_rsa.pub"
